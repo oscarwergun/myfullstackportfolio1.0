@@ -32,3 +32,36 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## CODE SYNTAX NOTES
+1. Create a next.js app with typescript flag
+
+```
+npx create-next-app --ts
+```
+2. INSTALLATION tailwind.css
+a.install tailwindcss via npm and initiate 
+```
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+```
+b. configure tailwind.config file
+
+```
+module.exports = {
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+```
+3.add the tailwind directives in global.css
+```
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+``` 
