@@ -9,7 +9,7 @@
         hover:bg-heroButtons hover:text-[#fff];
   }
   .pageTitle {
-    @apply absolute top-[100px] text-6xl tracking-[18px] uppercase opacity-80 italic;
+    @apply absolute top-[100px] text-4xl tracking-[18px] uppercase opacity-80 italic;
   }
   
 }
