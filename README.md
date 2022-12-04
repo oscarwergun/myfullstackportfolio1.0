@@ -65,3 +65,12 @@ module.exports = {
 @tailwind components;
 @tailwind utilities;
 ``` 
+
+#### when you are using Image component from next/image library if the source is from en api online source you need to configure next.config.js file 
+```
+next.config.js file
+images: {
+    domains:["scontent.fmmx3-1.fna.fbcdn.net"]
+  }
+}
+```

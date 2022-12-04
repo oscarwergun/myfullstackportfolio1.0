@@ -5,7 +5,13 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    colors: {
+      heroButtons: "rgb(242, 177, 37)",
+    },
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    require("tailwindcss-brand-colors"),
+    require("tailwindcss-debug-screens"),
+  ],
 };

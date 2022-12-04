@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* create a custom  utility class*/
+@layer components {
+  .heroButtons {
+    @apply px-4 py-3  rounded-full uppercase text-[#fff]  ml-4 inline-flex w-[80%]  text-xl items-center justify-center text-center my-3 cursor-pointer
+        hover:bg-heroButtons hover:text-[#fff];
+  }
+  .pageTitle {
+    @apply absolute top-[100px] text-6xl tracking-[18px] uppercase opacity-80 italic;
+  }
+  
+}

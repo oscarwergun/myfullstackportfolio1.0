@@ -18,7 +18,10 @@
     "next": "13.0.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-simple-typewriter": "^5.0.1",
     "react-social-icons": "^5.15.0",
+    "tailwindcss-brand-colors": "^0.3.3",
+    "tailwindcss-debug-screens": "^2.2.1",
     "typescript": "4.9.3"
   },
   "devDependencies": {
