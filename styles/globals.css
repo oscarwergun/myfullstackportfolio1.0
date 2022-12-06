@@ -11,5 +11,7 @@
   .pageTitle {
     @apply absolute top-[100px] text-4xl tracking-[18px] uppercase opacity-80 italic;
   }
-  
+  .bgEffect {
+    @apply w-full absolute top-[30%] bg-[rgb(56,51,82)] h-[600px] -skew-y-12;
+  }
 }
