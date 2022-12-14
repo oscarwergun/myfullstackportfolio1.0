@@ -1,4 +1,6 @@
 import Head from "next/head";
+import Image from "next/image";
+import Link from "next/link";
 import About from "../components/About";
 import Contact from "../components/Contact";
 import Experiences from "../components/Experiences";
@@ -29,15 +31,13 @@ export default function Home() {
       <section id="skills" className="snap-center">
         <Skills />
       </section>
-      {/* Projects */}
       <section id="projects" className="snap-center">
         <Projects />
       </section>
       <section id="contact" className="snap-center">
         <Contact />
       </section>
-      {/* Contact */}
-      
+     
     </div>
   );
 }
