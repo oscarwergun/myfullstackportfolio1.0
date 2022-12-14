@@ -74,3 +74,25 @@ images: {
   }
 }
 ```
+
+## Sanity deployment
+```
+sanity deploy
+```
+will make a instance of that online. 
+## PULL INFORMATION TO FRONT END FROM SANITY BACKEND WITH GROQ query language
+```
+*[_type=="social"] {
+  ...,
+}
+// for example will fetch all data that has social type
+```
+
+- next step is a create api endpoints by using next.js fetch data and pull to frontend from backend
+Next.js has already api folder that has endpoint so localhost:3000/api/hello
+
+1. We need to install next-sanity to connect frontend with backend
+* make sure that we are in right root folder not sanity because sanity has also package.json
+```
+npm install next-sanity @portabletext/react @sanity/image-url ```
+2. create a sanity.ts file in main folder and create client by using next-sanity 
