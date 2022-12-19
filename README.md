@@ -81,6 +81,7 @@ sanity deploy
 ```
 will make a instance of that online. 
 ## PULL INFORMATION TO FRONT END FROM SANITY BACKEND WITH GROQ query language
+
 ```
 *[_type=="social"] {
   ...,
@@ -96,3 +97,7 @@ Next.js has already api folder that has endpoint so localhost:3000/api/hello
 ```
 npm install next-sanity @portabletext/react @sanity/image-url ```
 2. create a sanity.ts file in main folder and create client by using next-sanity 
+3. We define endpoints 
+4. create function to fetch data from these endpoints
+4. define getStaticProps function (advantage of using next.js different types of rendering at different of pages)
+
