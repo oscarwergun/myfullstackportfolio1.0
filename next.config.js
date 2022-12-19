@@ -11,6 +11,8 @@ module.exports = {
       "z3d9h8m9.stackpathcdn.com",
       "logodix.com",
       "codeguruozzy.com",
+      "cdn.sanity.io",
+      "z3d9h8m9.stackpathcdn.com",
     ],
   },
 };

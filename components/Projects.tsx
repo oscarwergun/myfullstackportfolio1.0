@@ -1,9 +1,13 @@
 import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
-type Props = {};
-const projects = [1, 2, 3, 4, 5];
-function Projects({}: Props) {
+import { Project } from "../typings";
+import { urlFor } from "../sanity";
+type Props = {
+  projects: Project[];
+};
+
+function Projects({projects}: Props) {
   return (
     <div className=" relative flex items-center justify-center h-screen snap-center text-[rgb(255,255,255)] ">
       <h2 className="pageTitle">Projects</h2>
@@ -14,7 +18,7 @@ function Projects({}: Props) {
         {projects.map((project, i) => (
           <div
             key={i}
-            className="flex flex-col items-center justify-center flex-shrink-0 w-screen space-y-5 snap-center "
+            className="flex flex-col items-center justify-center flex-shrink-0 w-screen h-screen p-10 space-y-5 snap-center"
           >
             <motion.div
               initial={{ opacity: 0, y: -300 }}
@@ -22,10 +26,11 @@ function Projects({}: Props) {
               transition={{ duration: 1.2 }}
             >
               <Image
-                src="https://scontent.fmmx3-1.fna.fbcdn.net/v/t1.6435-9/71897782_1389460091228007_8841843597960544256_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=WaoS9bMjO1kAX_EPj1I&_nc_ht=scontent.fmmx3-1.fna&oh=00_AfANQnNQk5qeVmq39KDqpUWz5k3suU5xrvTxQlKkxGpfrQ&oe=63A9F021"
+                src={urlFor(project?.image).url()}
                 alt="project_image"
                 width="400"
                 height="400"
+                
                 className=""
               />
             </motion.div>
@@ -34,13 +39,11 @@ function Projects({}: Props) {
                 <span className="underline decoration-[rgb(233,220,79)]/70 not-italic">
                   Project.{i + 1} of {projects.length}{" "}
                 </span>
-                project name
+                {project.title}
               </h4>
+              
               <p className="mx-4 text-2xl text-center md:text-left opacity-70 ">
-                Lorem ipsum, dolor sit amet consectetur adipisicing
-                elit.Suscipit iure quas molestias fugiat optio omnis, vel
-                commodi consectetur consequatur illo perferendis in fugit. Quasi
-                cumque reiciendis eos explicabo? Minus, non.
+                {project.summary}
               </p>
             </div>
           </div>

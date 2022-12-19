@@ -1,72 +1,47 @@
 import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
-type Props = {};
+import { Experience } from "../typings";
+import { urlFor } from "../sanity";
+type Props = {
+  experience: Experience;
+};
 
-function ExperienceCard({}: Props) {
+function ExperienceCard({ experience }: Props) {
   return (
     <section className="flex flex-col items-center flex-shrink-0 px-3 m-3 space-y-6 bg-[#2b2b2b] rounded-xl w-[500px] md:w-[600px] lg:w-[700px] snap-center h-[600px] md:h-[700px] lg:h-[800px] opacity-40 hover:opacity-100 pt-5 cursor-pointer transition-opacity duration-200 overflow-hidden">
-      <motion.div
-        initial={{ opacity: 0, y: -100 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        transition={{ duration: 1.5 }}
-        viewport={{ once: true }}
-        className="space-y-3 "
-      >
-        <Image
-          src="https://z3d9h8m9.stackpathcdn.com/wp-content/uploads/2020/11/ec-logo-mono2.svg"
-          alt="experience-logo"
-          objectFit="contain"
-          width="200"
-          height="200"
-          className="rounded-full md:rounded-lg lg:w-[300px] lg:h-[300px] "
-        />
+      <div className="flex flex-col items-center justify-center space-y-3">
+        <motion.div
+          initial={{ opacity: 0, y: -100 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 1.5 }}
+        >
+          <Image
+            src={urlFor(experience?.companyImage).url()}
+            alt="experience-logo"
+            width="150"
+            height="150"
+            className="rounded-[20%] md:rounded-lg lg:w-[200px] lg:h-[200px]"
+          />
+        </motion.div>
         <div className="px-0 md:px-6">
-          <h4 className="text-2xl font-light">Web Developer</h4>
-          <p className="mt-1 text-lg">Frontend / Fullstack </p>
-          <div className="flex my-2 space-x-2">
-            <Image
-              src="https://logodix.com/logo/1658345.png"
-              alt="techLogo"
-              width="50"
-              height="50"
-            />
-            <Image
-              src="https://logodix.com/logo/1658345.png"
-              alt="techLogo"
-              width="50"
-              height="50"
-            />
-            <Image
-              src="https://logodix.com/logo/1658345.png"
-              alt="techLogo"
-              width="50"
-              height="50"
-            />
-          </div>
+          <h4 className="text-2xl font-light">{experience?.company}</h4>
+          <p className="mt-1 text-lg">{experience?.title} </p>
           <p className="text-sm uppercase text-[#c6bfbf] my-2">
-            Started work ... Ended- ...
+            {new Date(experience.dateStarted).toDateString()}-{" "}
+            {experience?.isCurrentlyWorking
+              ? "Present"
+              : new Date(experience.dateEnded).toDateString()}
           </p>
-          <ul className="mt-3 space-y-3 text-lg list-disc">
-            <li>
-              Summary Lorem ipsum dolor sit, amet consectetur
-              ldfsflsdfdsfsdlfdssdfldsfdsfl
-            </li>
-            <li>
-              Summary Lorem ipsum dolor sit, amet consectetur
-              ldfsflsdfdsfsdlfdssdfldsfdsfl
-            </li>
-            <li>
-              Summary Lorem ipsum dolor sit, amet consectetur
-              ldfsflsdfdsfsdlfdssdfldsfdsfl
-            </li>
-            <li>
-              Summary Lorem ipsum dolor sit, amet consectetur
-              ldfsflsdfdsfsdlfdssdfldsfdsfl
-            </li>
+          <ul className="mt-8 space-y-4 overflow-y-scroll text-lg list-disc ">
+            {experience?.details.map((point) => (
+              <li key={experience._id} className="">
+                ⭐️ {point}
+              </li>
+            ))}
           </ul>
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 }
