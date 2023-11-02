@@ -38,6 +38,8 @@ export default function Home({
         <title>Codeguruozzy fullstack portfolio</title>
       </Head>
       <Header socials={socials} />
+  
+        
       <section id="hero" className="snap-center">
         <Hero pageInfo={pageInfo} />
       </section>
@@ -57,7 +59,7 @@ export default function Home({
       <section id="contact" className="snap-center">
         <Contact />
       </section>
-    </div>
+      </div>
   );
 }
 

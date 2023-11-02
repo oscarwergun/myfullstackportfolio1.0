@@ -11,7 +11,7 @@ function About({ pageInfo }: Props) {
   return (
     <div
       className="h-screen flex flex-col relative text-center justify-evenly items-center text-[#fff]
-    md:text-left md:flex-row max-w-7xl px-10 mx-auto"
+    md:text-left md:flex-row max-w-7xl px-10 mx-auto pt-48 "
     >
       <h2 className="pageTitle">About</h2>
       <motion.div
@@ -32,10 +32,9 @@ function About({ pageInfo }: Props) {
         <Image
           src={urlFor(pageInfo?.profilePic).url()}
           alt="about image"
-          objectFit="contain"
           width="300"
           height="300"
-          className="rounded-full md:rounded-lg lg:w-[400px] lg:h-[400px]"
+          className="rounded-full md:rounded-lg lg:w-[400px] lg:h-[400px] my-8"
         />
       </motion.div>
       <div className="md:ml-4 md:flex-1">
