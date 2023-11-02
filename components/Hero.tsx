@@ -21,7 +21,7 @@ function Hero({ pageInfo }: Props) {
     delaySpeed: 1500,
   });
   return (
-    <div className="flex flex-col items-center justify-center h-screen space-y-6 overflow-hidden text-center ">
+    <div className="flex flex-col items-center justify-center h-screen pt-12 space-y-6 overflow-hidden text-center">
       <BackgroundCircle />
       {/* pull a remote image using Image component and layout property. It is important to keep in mind with layout property that parent div is relative  */}
       <div className="relative h-72 w-72 md:w-80 md:h-80 xl:w-96 xl:h-96">

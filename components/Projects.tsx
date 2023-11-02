@@ -14,7 +14,7 @@ function Projects({projects}: Props) {
       {/* background effect */}
       <div className="bgEffect"></div>
       {/* projects */}
-      <div className="relative flex w-full overflow-x-scroll overflow-y-hidden snap-x snap-mandatory">
+      <div className="relative flex w-full pt-24 overflow-x-scroll overflow-y-hidden snap-x snap-mandatory">
         {projects.map((project, i) => (
           <div
             key={i}

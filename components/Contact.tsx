@@ -21,16 +21,16 @@ export default function Contact({}: Props) {
     window.location.href = `mailto:oscar.w.ergun@gmail?subject=${data.subject}&body=Hi, This is ${data.name} ${data.surname} and I reach you because of ${data.subject} I want to talk about ${data.message} and my mail is ${data.email} `;
   };
   return (
-    <div className="relative h-screen snap-center text-[rgb(255,255,255)] flex justify-center items-center">
-      <h2 className="pageTitle">Contact</h2>
+    <div className="relative h-screen snap-center text-[rgb(255,255,255)] flex justify-center items-center pt-24 px-8">
+      <h2 className="pageTitle ">Contact</h2>
 
       <div className="flex flex-col items-center justify-center space-x-5">
-        <h3 className="text-4xl">I am ready for new challenge.</h3>
-        <div className="flex">
-          <span className=" underline decoration-[#f09f3d] text-4xl">
+        <h3 className="mb-6 text-3xl">I am ready for new challenge.</h3>
+        <div className="flex items-center gap-1">
+          <span className=" underline decoration-[#f09f3d] text-3xl">
             Let&apos;s have a chat{" "}
           </span>
-          <BiMailSend color="orange" size="3em" />
+          <BiMailSend color="orange" size="2em" />
         </div>
         <div className="flex flex-col items-center justify-center mt-6 space-y-8">
           <div className="flex items-center justify-center space-x-4 animate-pulse">

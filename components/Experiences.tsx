@@ -9,7 +9,7 @@ type Props = {
 function Experiences({ experiences }: Props) {
   return (
     <motion.div
-      className="relative flex flex-col justify-center max-w-full mx-auto h-screen text-center text-[#fff] overflow-hidden md:flex-row items-center"
+      className="relative flex flex-col justify-center max-w-[90%] mx-auto h-screen text-center text-[#fff] overflow-hidden md:flex-row items-center pt-24 md:pt-48 "
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1.4 }}
