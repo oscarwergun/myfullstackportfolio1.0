@@ -4,9 +4,10 @@ import Skill from "./Skill";
 import { Skill as SkillType } from "../typings";
 type Props = {
   skills: SkillType[];
+  title:String
 };
 
-function Skills({ skills }: Props) {
+function Skills({ skills, title }: Props) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -14,7 +15,7 @@ function Skills({ skills }: Props) {
       transition={{ duration: 1.5 }}
       className="h-screen text-[#fff] snap-center flex justify-center items-center relative flex-col text-center xl:flex-row mx-auto pt-48 md:pt-64"
     >
-      <h3 className="pageTitle">Skills</h3>
+      <h3 className="pageTitle">{title}</h3>
       <h4
         className="absolute top-[160px] text-xl tracking-[10px] uppercase opacity-80 hover:underline text-[#dfa52a]
      "

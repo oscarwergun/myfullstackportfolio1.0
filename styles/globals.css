@@ -4,12 +4,11 @@
 
 /* create a custom  utility class*/
 @layer components {
-  .heroButtons {
-    @apply px-4 py-3  rounded-full uppercase text-[#fff]  ml-4 inline-flex w-[80%]  text-xl items-center justify-center text-center my-3 cursor-pointer
-        hover:bg-heroButtons hover:text-[#fff];
+  .heroBtn {
+    @apply px-6 py-2 rounded-full tracking-wider text-[#fff] transition-all hover:bg-[#8e0de9] uppercase;
   }
   .pageTitle {
-    @apply absolute top-[100px] text-4xl tracking-[18px] uppercase opacity-80 italic;
+    @apply absolute top-24 tracking-[14px] uppercase text-2xl text-[#fafafa]/60 ;
   }
   .bgEffect {
     @apply w-full absolute top-[30%] bg-[rgb(56,51,82)] h-[600px] -skew-y-12;

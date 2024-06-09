@@ -21,6 +21,7 @@ type Props = {
   skills: Skill[];
   projects: Project[];
   socials: Social[];
+  title: String
 };
 export default function Home({
   pageInfo,
@@ -28,38 +29,34 @@ export default function Home({
   skills,
   projects,
   socials,
+  title
 }: Props) {
   return (
     <div
-      className="bg-[#29264c] h-screen snap-y snap-mandatory 
-    overflow-scroll z-0 debug-screens"
+      className="bg-[#1C1F33] text-[#fafafa] h-screen snap-y snap-mandatory overflow-y-scroll w-full 
+      scrollbar scrollbar-track-[#21253c] scrollbar-thumb-yellow-600"
     >
-      <Head>
-        <title>Codeguruozzy fullstack portfolio</title>
-      </Head>
       <Header socials={socials} />
-  
-        
-      <section id="hero" className="snap-center">
+      <section id="hero" className="snap-start">
         <Hero pageInfo={pageInfo} />
       </section>
       <section id="about" className="snap-center">
-        <About pageInfo={pageInfo} />
+        <About pageInfo={pageInfo} title="About" />
       </section>
 
       <section id="experiences" className="snap-center">
-        <Experiences experiences={experiences} />
+        <Experiences experiences={experiences} title="Experiences/ Education"/>
       </section>
-      <section id="skills" className="snap-center">
-        <Skills skills={skills} />
+      <section id="skills" className="snap-start">
+        <Skills skills={skills} title="Skills"/>
       </section>
-      <section id="projects" className="snap-center">
-        <Projects projects={projects} />
+      <section id="projects" className="snap-start">
+        <Projects projects={projects} title="Project"/>
       </section>
       <section id="contact" className="snap-center">
-        <Contact />
+        <Contact pageInfo={pageInfo} title="Contact"/>
       </section>
-      </div>
+    </div>
   );
 }
 
