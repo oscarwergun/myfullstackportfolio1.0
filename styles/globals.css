@@ -11,7 +11,7 @@
     @apply absolute top-24 tracking-[14px] uppercase text-2xl text-[#fafafa]/60 ;
   }
   .bgEffect {
-    @apply w-full absolute top-[30%] bg-[rgb(56,51,82)] h-[600px] -skew-y-12;
+    @apply w-full absolute top-[25%] bg-[#1e2c3d] h-[600px] -skew-y-12;
   }
   .contactInputStyle {
     @apply outline-none bg-[#e4dbdb] rounded-md px-5 py-3 text-xl border-b text-[#333] focus:text-[#e1b224];
