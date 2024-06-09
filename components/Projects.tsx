@@ -5,12 +5,13 @@ import { Project } from "../typings";
 import { urlFor } from "../sanity";
 type Props = {
   projects: Project[];
+  title:String
 };
 
-function Projects({projects}: Props) {
+function Projects({projects, title}: Props) {
   return (
     <div className=" relative flex items-center justify-center h-screen snap-center text-[rgb(255,255,255)] ">
-      <h2 className="pageTitle">Projects</h2>
+      <h2 className="pageTitle">{title}</h2>
       {/* background effect */}
       <div className="bgEffect"></div>
       {/* projects */}
@@ -28,8 +29,8 @@ function Projects({projects}: Props) {
               <Image
                 src={urlFor(project?.image).url()}
                 alt="project_image"
-                width="400"
-                height="400"
+                width="360"
+                height="360"
                 
                 className=""
               />

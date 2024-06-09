@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { pageInfo } from "../typings";
 import { urlFor } from "../sanity";
-
+import { motion } from "framer-motion";
 type Props = {
   pageInfo: pageInfo;
 };
@@ -21,47 +21,48 @@ function Hero({ pageInfo }: Props) {
     delaySpeed: 1500,
   });
   return (
-    <div className="flex flex-col items-center justify-center h-screen pt-12 space-y-6 overflow-hidden text-center">
+<motion.div
+      initial={{
+        opacity: 0,
+      }}
+      animate={{
+        opacity: 1
+      }}
+      transition={{
+        duration: 2.5
+      }}
+      className='flex flex-col items-center justify-center h-screen space-y-8 overflow-hidden text-center'>
       <BackgroundCircle />
-      {/* pull a remote image using Image component and layout property. It is important to keep in mind with layout property that parent div is relative  */}
-      <div className="relative h-72 w-72 md:w-80 md:h-80 xl:w-96 xl:h-96">
-        <Image
-          src={urlFor(pageInfo?.heroImage).url()}
-          alt="/"
-          width={400}
-          height={400}
-          className="rounded-full"
-          priority
-        />
+      <Image src={urlFor(pageInfo?.heroImage).url()} alt="Oscar profile picture" width={300} height={300} className='relative object-cover mx-auto rounded-full' />
+      <div className='z-20'>
+        <h2 className='text-slate-400 uppercase tracking-[12px] pb-2'>{pageInfo.role}</h2>
+        
+        <h1 className='px-10 text-3xl lg:text-5xl md:text-4xl'>
+          <span className='mr-3'>{text}</span>
+          <Cursor cursorColor='#8e0de9' />
+        </h1>
+
+        <div className='pt-8 '>
+          <Link href="#about">
+            <button className='heroBtn'>About</button>
+          </Link>
+          <Link href="#experiences">
+            <button className='heroBtn'>Experiences</button>
+          </Link>
+          <Link href="#skills">
+            <button className='heroBtn'>Skills</button>
+          </Link>
+          <Link href="#projects">
+            <button className='heroBtn'>Projects</button>
+          </Link>
+          <Link href="#contact">
+            <button className='heroBtn'>Contact</button>
+          </Link>
+
+        </div>
       </div>
-      <h1 className="text-3xl tracking-widest uppercase text-[#c7c5c5] pb-2">
-        {pageInfo?.role}
-      </h1>
-      {/* react-simple-typewriter library */}
-      <h1 className="text-5xl text-center">
-        <span className="text-[#fff] tracking-wider">{text}</span>
-        <Cursor cursorColor="rgb(242, 177, 37)" />
-      </h1>
-      {/* section buttons */}
-      <div className="z-10 inline-flex flex-col w-[60%] justify-center items-center md:flex md:flex-row md:py-4 py-2 cursor-pointer">
-        <Link href="#about">
-          <button className="heroButtons">About</button>
-        </Link>
-        <Link href="#experiences">
-          <button className="heroButtons">Experiences</button>
-        </Link>
-        <Link href="#skills">
-          <button className="heroButtons">Skills</button>
-        </Link>
-        <Link href="#projects">
-          <button className="heroButtons">Projects</button>
-        </Link>
-        <Link href="#contact">
-          <button className="heroButtons">Contact</button>
-        </Link>
-      </div>
-    </div>
-  );
+    </motion.div>
+  )
 }
 
 export default Hero;
